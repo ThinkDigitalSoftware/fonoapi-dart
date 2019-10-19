@@ -3,6 +3,8 @@ description: A dart client for FonoAPI.
 version: 0.1.0
 author: ThinkDigitalSoftware <jwhite@thinkdigital.software>
 repository: https://www.github.com/thinkdigitalsoftware/fonoapi-dart
+homepage: https://www.github.com/thinkdigitalsoftware/fonoapi-dart
+
 
 environment:
   sdk: '>=2.5.0 <3.0.0'
