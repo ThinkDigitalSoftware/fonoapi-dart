@@ -1,10 +1,10 @@
 name: fonoapi_dart
 description: A dart client for FonoAPI.
-version: 0.1.0
+version: 0.1.1
 author: ThinkDigitalSoftware <jwhite@thinkdigital.software>
 repository: https://www.github.com/thinkdigitalsoftware/fonoapi-dart
 homepage: https://www.github.com/thinkdigitalsoftware/fonoapi-dart
-
+issue_tracker: https://github.com/thinkdigitalsoftware/fonoapi-dart/issues
 
 environment:
   sdk: '>=2.5.0 <3.0.0'
