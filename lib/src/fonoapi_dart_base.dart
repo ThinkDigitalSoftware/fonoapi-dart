@@ -10,6 +10,7 @@ class FonoApi {
   /// You can get it here https://fonoapi.freshpixl.com/token/generate
   final String apiToken;
   static const String _apiUrl = 'https://fonoapi.freshpixl.com/v1/getdevice';
+  Client client = Client();
 
   FonoApi(this.apiToken);
 
@@ -26,7 +27,7 @@ class FonoApi {
     @required String model,
     int position,
   }) async {
-    final result = await post("$_apiUrl",
+    final result = await client.post("$_apiUrl",
         body: {
           'brand': brand,
           'device': model,
@@ -36,13 +37,30 @@ class FonoApi {
 
     final resultJson = jsonDecode(result.body);
 
-    if (result is Map && resultJson['status'] == 'error') {
-      throw MissingParameterException(resultJson['message']);
-    }
+    _handleErrors(resultJson);
+
     if (resultJson is Map) {
       return [Device.fromJson(resultJson)];
     } else {
       return [for (final deviceJson in resultJson) Device.fromJson(deviceJson)];
+    }
+  }
+
+  void _handleErrors(resultJson) {
+    if (resultJson is Map && resultJson['status'] == 'error') {
+      final String errorMessage = resultJson['message'];
+      final lowerCasedErrorMessage = errorMessage.toLowerCase();
+      if (lowerCasedErrorMessage.contains('invalid') &&
+          lowerCasedErrorMessage.contains('token')) {
+        throw InvalidTokenException(lowerCasedErrorMessage);
+      }
+      if (lowerCasedErrorMessage.contains("no matching results")) {
+        throw NoMatchingResultsException(errorMessage);
+      }
+      if (lowerCasedErrorMessage.contains('parameter') &&
+          lowerCasedErrorMessage.contains('missing')) {
+        throw MissingParameterException(errorMessage);
+      }
     }
   }
 }

@@ -4,3 +4,4 @@
 library fonoapi_dart;
 
 export 'src/fonoapi_dart_base.dart';
+export 'src/models/device.dart';

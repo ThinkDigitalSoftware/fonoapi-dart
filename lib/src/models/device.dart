@@ -20,6 +20,7 @@ class Device {
   final String displayC;
   final String cardSlot;
   final String phonebook;
+
   final String callRecords;
   final String cameraC;
   final String alertTypes;
@@ -167,4 +168,87 @@ class Device {
   String toString() {
     return 'Device{deviceName: $deviceName, brand: $brand}';
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is Device &&
+              runtimeType == other.runtimeType &&
+              deviceName == other.deviceName &&
+              brand == other.brand &&
+              technology == other.technology &&
+              gprs == other.gprs &&
+              edge == other.edge &&
+              announced == other.announced &&
+              status == other.status &&
+              dimensions == other.dimensions &&
+              weight == other.weight &&
+              sim == other.sim &&
+              type == other.type &&
+              resolution == other.resolution &&
+              displayC == other.displayC &&
+              cardSlot == other.cardSlot &&
+              phonebook == other.phonebook &&
+              callRecords == other.callRecords &&
+              cameraC == other.cameraC &&
+              alertTypes == other.alertTypes &&
+              loudspeaker == other.loudspeaker &&
+              wlan == other.wlan &&
+              bluetooth == other.bluetooth &&
+              gps == other.gps &&
+              infraredPort == other.infraredPort &&
+              radio == other.radio &&
+              messaging == other.messaging &&
+              browser == other.browser &&
+              clock == other.clock &&
+              alarm == other.alarm &&
+              games == other.games &&
+              java == other.java &&
+              featuresC == other.featuresC &&
+              batteryC == other.batteryC &&
+              standBy == other.standBy &&
+              talkTime == other.talkTime &&
+              memoryC == other.memoryC &&
+              the2GBands == other.the2GBands &&
+              the35MmJack == other.the35MmJack;
+
+  @override
+  int get hashCode =>
+      deviceName.hashCode ^
+      brand.hashCode ^
+      technology.hashCode ^
+      gprs.hashCode ^
+      edge.hashCode ^
+      announced.hashCode ^
+      status.hashCode ^
+      dimensions.hashCode ^
+      weight.hashCode ^
+      sim.hashCode ^
+      type.hashCode ^
+      resolution.hashCode ^
+      displayC.hashCode ^
+      cardSlot.hashCode ^
+      phonebook.hashCode ^
+      callRecords.hashCode ^
+      cameraC.hashCode ^
+      alertTypes.hashCode ^
+      loudspeaker.hashCode ^
+      wlan.hashCode ^
+      bluetooth.hashCode ^
+      gps.hashCode ^
+      infraredPort.hashCode ^
+      radio.hashCode ^
+      messaging.hashCode ^
+      browser.hashCode ^
+      clock.hashCode ^
+      alarm.hashCode ^
+      games.hashCode ^
+      java.hashCode ^
+      featuresC.hashCode ^
+      batteryC.hashCode ^
+      standBy.hashCode ^
+      talkTime.hashCode ^
+      memoryC.hashCode ^
+      the2GBands.hashCode ^
+      the35MmJack.hashCode;
 }
