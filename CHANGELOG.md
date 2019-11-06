@@ -9,3 +9,6 @@
 ## 0.1.2+1
 
 - Add tests and exceptions
+
+## 0.1.2+2
+- Update description

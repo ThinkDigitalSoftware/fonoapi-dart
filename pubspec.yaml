@@ -1,7 +1,8 @@
 name: fonoapi_dart
-description: A dart client for FonoAPI.
-version: 0.1.2+1
-author: ThinkDigitalSoftware <jwhite@thinkdigital.software>
+description: A dart client for FonoAPI. FonoAPI is a small API which provides descriptions of Mobile Devices such as model, brand, processor, weight etc..
+
+
+version: 0.1.2+2
 repository: https://www.github.com/thinkdigitalsoftware/fonoapi-dart
 homepage: https://www.github.com/thinkdigitalsoftware/fonoapi-dart
 issue_tracker: https://github.com/thinkdigitalsoftware/fonoapi-dart/issues
@@ -11,6 +12,7 @@ environment:
 
 dependencies:
   http: ^0.12.0+2
+  meta: ^1.1.8
 
 dev_dependencies:
   pedantic: ^1.8.0+1
