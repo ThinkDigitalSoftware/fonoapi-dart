@@ -12,3 +12,6 @@
 
 ## 0.1.2+2
 - Update description
+
+## 0.1.3
+- Update dependencies for compatibility with older Flutter versions
